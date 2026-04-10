@@ -1,0 +1,10 @@
+{
+  "model": "gpt2",
+  "n_samples": 200,
+  "baseline_perplexity": 160.51329040527344,
+  "ablated_perplexity": 931.8101806640625,
+  "perplexity_increase_percent": 480.5190201455425,
+  "n_edges_ablated": 20,
+  "alpha": 0.5,
+  "ablation_method": "mean_ablation"
+}

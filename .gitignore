@@ -5,9 +5,7 @@ __pycache__/
 dist/
 build/
 
-# Results (generated at runtime)
-results/*.json
-results/figures/*.png
+# Results - tracked for reproducibility
 
 # Jupyter
 .ipynb_checkpoints/
