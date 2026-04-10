@@ -38,6 +38,8 @@ def main():
                         help="Output path for comparison results")
     parser.add_argument("--device", type=str, default="auto",
                         help="Device: auto, cuda, cpu")
+    parser.add_argument("--alpha", type=float, default=0.5,
+                        help="Blending factor: 0=no change, 1=full replacement (default 0.5)")
     args = parser.parse_args()
 
     print("=" * 60)
@@ -47,6 +49,7 @@ def main():
     print(f"  Dataset: {args.dataset}")
     print(f"  Edges:   {args.edges}")
     print(f"  Output:  {args.output}")
+    print(f"  Alpha:   {args.alpha}")
     print("=" * 60)
 
     # Load model
@@ -77,20 +80,21 @@ def main():
         male_ids=male_ids,
         female_ids=female_ids,
         baseline_results=baseline,
+        alpha=args.alpha,
         save_path=args.output,
     )
 
     # Detailed per-prompt output
-    print(f"\n{'─' * 70}")
-    print(f"  {'Prompt':<40s}  {'Before':>8s}  {'After':>8s}  {'Δ':>8s}")
-    print(f"{'─' * 70}")
+    print(f"\n{'-' * 70}")
+    print(f"  {'Prompt':<40s}  {'Before':>8s}  {'After':>8s}  {'Diff':>8s}")
+    print(f"{'-' * 70}")
     for item in comparison["per_prompt"]:
         prompt_short = item["clean_prompt"][:38] + ".." if len(item["clean_prompt"]) > 40 else item["clean_prompt"]
         delta = item["reduction"]
-        symbol = "↓" if delta > 0 else "↑"
+        symbol = "v" if delta > 0 else "^"
         print(f"  {prompt_short:<40s}  {item['bias_before']:8.4f}  {item['bias_after']:8.4f}  {symbol}{abs(delta):7.4f}")
 
-    print(f"\n✓ Debiasing complete. Results saved to {args.output}")
+    print(f"\n[OK] Debiasing complete. Results saved to {args.output}")
 
 
 if __name__ == "__main__":

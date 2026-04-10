@@ -68,14 +68,14 @@ def main():
     )
 
     # Print per-prompt summary
-    print(f"\n{'─' * 60}")
+    print(f"\n{'-' * 60}")
     print(f"  Per-Prompt Bias Scores:")
-    print(f"{'─' * 60}")
+    print(f"{'-' * 60}")
     for r in results["per_prompt"]:
-        direction_symbol = "♂" if r["direction"] == "male" else "♀"
-        print(f"  {direction_symbol} {r['bias_score']:.4f}  │  {r['clean_prompt'][:50]}...")
+        direction_symbol = "M" if r["direction"] == "male" else "F"
+        print(f"  {direction_symbol} {r['bias_score']:.4f}  |  {r['clean_prompt'][:50]}...")
 
-    print(f"\n✓ Baseline complete. Results saved to {args.output}")
+    print(f"\n[OK] Baseline complete. Results saved to {args.output}")
 
 
 if __name__ == "__main__":

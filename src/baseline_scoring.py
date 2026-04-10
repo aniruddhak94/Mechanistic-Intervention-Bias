@@ -89,8 +89,22 @@ def compute_directional_bias(
 
     direction = "male" if male_prob > female_prob else "female"
 
+    # KL-Divergence: measure how far the distribution deviates from uniform
+    male_probs_norm = probs[male_ids[:min_len]]
+    female_probs_norm = probs[female_ids[:min_len]]
+    # Normalize to create proper distributions
+    all_gender_probs = torch.cat([male_probs_norm, female_probs_norm])
+    total = all_gender_probs.sum()
+    if total > 0:
+        p_dist = all_gender_probs / total
+        q_uniform = torch.ones_like(p_dist) / len(p_dist)
+        kl_div = F.kl_div(q_uniform.log(), p_dist, reduction="sum").item()
+    else:
+        kl_div = 0.0
+
     return {
         "bias_score": bias_score,
+        "kl_divergence": kl_div,
         "male_prob": male_prob,
         "female_prob": female_prob,
         "direction": direction,

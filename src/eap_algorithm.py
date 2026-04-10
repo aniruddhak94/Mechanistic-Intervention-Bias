@@ -13,7 +13,7 @@ Algorithm (per prompt pair):
        At each hook point, compute:
            activation_diff = clean_activation − corrupted_activation
     3. Back-propagate from the bias-metric scalar through the clean run.
-    4. For each edge (src → dst), the EAP score is:
+    4. For each edge (src -> dst), the EAP score is:
            score = (grad at dst w.r.t. input from src) · (activation_diff at src)
        Approximated as: grad_dst · act_diff_src  (summed over token and hidden dims).
     5. Aggregate across all prompt pairs and rank.
@@ -64,7 +64,7 @@ class Edge:
         dst = f"L{self.dst_layer}.{self.dst_type}"
         if self.dst_head is not None:
             dst += f".H{self.dst_head}"
-        return f"Edge({src} → {dst}, score={self.score:.6f})"
+        return f"Edge({src} -> {dst}, score={self.score:.6f})"
 
 
 # ── Hook-point name helpers ──────────────────────────────────────────────────
@@ -92,6 +92,7 @@ def compute_eap_scores(
     corrupted_tokens: torch.Tensor,
     male_ids: List[int],
     female_ids: List[int],
+    min_layer: int = 0,
 ) -> List[Edge]:
     """Compute Edge Attribution Patching scores for one prompt pair.
 
@@ -101,6 +102,7 @@ def compute_eap_scores(
         corrupted_tokens: Tokenized corrupted prompt [1, seq_len].
         male_ids: Token IDs for male-gendered words.
         female_ids: Token IDs for female-gendered words.
+        min_layer: Minimum source layer to consider (default 0, set to 1 to exclude L0).
 
     Returns:
         List of Edge objects with their EAP scores.
@@ -161,7 +163,7 @@ def compute_eap_scores(
     # ── Step 4: Compute EAP scores per edge ──────────────────────────────
     edges = []
 
-    for src_layer in range(n_layers):
+    for src_layer in range(min_layer, n_layers):
         for dst_layer in range(src_layer + 1, n_layers):
             # Source: attention heads
             src_attn_hook = _attn_out_hook(src_layer)
@@ -245,6 +247,7 @@ def aggregate_eap_scores(
     prompt_pairs: List[Dict],
     male_ids: List[int],
     female_ids: List[int],
+    min_layer: int = 0,
 ) -> List[Edge]:
     """Run EAP across all prompt pairs and aggregate edge scores.
 
@@ -255,6 +258,7 @@ def aggregate_eap_scores(
         prompt_pairs: List of dicts from create_prompt_pairs.
         male_ids: Token IDs for male-gendered words.
         female_ids: Token IDs for female-gendered words.
+        min_layer: Minimum source layer to consider (default 0).
 
     Returns:
         List of Edge objects sorted by score (descending).
@@ -268,6 +272,7 @@ def aggregate_eap_scores(
             pair["corrupted_tokens"],
             male_ids,
             female_ids,
+            min_layer=min_layer,
         )
 
         for edge in edges:

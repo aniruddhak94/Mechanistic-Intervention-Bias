@@ -43,7 +43,7 @@ def load_model(
     n_heads = model.cfg.n_heads
     d_model = model.cfg.d_model
 
-    print(f"[model_loader] ✓ Model loaded: {model_name}")
+    print(f"[model_loader] [OK] Model loaded: {model_name}")
     print(f"  Layers: {n_layers}, Heads: {n_heads}, d_model: {d_model}")
     print(f"  Device: {device}")
     print(f"  Parameters: {sum(p.numel() for p in model.parameters()):,}")

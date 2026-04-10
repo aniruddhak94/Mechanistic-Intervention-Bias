@@ -32,6 +32,8 @@ def main():
                         help="Output path for top edges JSON")
     parser.add_argument("--device", type=str, default="auto",
                         help="Device: auto, cuda, cpu")
+    parser.add_argument("--min_layer", type=int, default=1,
+                        help="Min source layer for EAP (default 1 to exclude L0)")
     args = parser.parse_args()
 
     # Auto-generate output path
@@ -48,6 +50,7 @@ def main():
     print(f"  Dataset: {args.dataset}")
     print(f"  Top-K:   {args.top_k}")
     print(f"  Output:  {args.output}")
+    print(f"  Min Layer: {args.min_layer}")
     print("=" * 60)
 
     # Load model
@@ -65,7 +68,7 @@ def main():
     print(f"[EAP] This will process {len(prompt_pairs)} prompt pairs.")
     print(f"[EAP] Estimated time: {len(prompt_pairs) * 10}-{len(prompt_pairs) * 30}s on GPU\n")
 
-    all_edges = aggregate_eap_scores(model, prompt_pairs, male_ids, female_ids)
+    all_edges = aggregate_eap_scores(model, prompt_pairs, male_ids, female_ids, min_layer=args.min_layer)
 
     # Extract top-K edges
     top_edges = get_top_edges(all_edges, args.top_k)
@@ -74,9 +77,9 @@ def main():
     save_edges(top_edges, args.output)
 
     # Print summary
-    print(f"\n{'─' * 60}")
+    print(f"\n{'-' * 60}")
     print(f"  Top {args.top_k} Bias-Causing Edges:")
-    print(f"{'─' * 60}")
+    print(f"{'-' * 60}")
     for i, edge in enumerate(top_edges[:20]):
         print(f"  {i + 1:3d}. {edge}")
     if len(top_edges) > 20:
@@ -88,10 +91,10 @@ def main():
         src_layer_counts[e.src_layer] = src_layer_counts.get(e.src_layer, 0) + 1
     print(f"\n  Source layer distribution:")
     for layer in sorted(src_layer_counts.keys()):
-        bar = "█" * src_layer_counts[layer]
+        bar = "#" * src_layer_counts[layer]
         print(f"    Layer {layer:2d}: {bar} ({src_layer_counts[layer]})")
 
-    print(f"\n✓ Circuit discovery complete. Top edges saved to {args.output}")
+    print(f"\n[OK] Circuit discovery complete. Top edges saved to {args.output}")
 
 
 if __name__ == "__main__":
