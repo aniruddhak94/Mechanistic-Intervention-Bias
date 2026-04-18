@@ -7,9 +7,15 @@ build/
 
 # Results - tracked for reproducibility
 
+# Kaggle output downloads
+results_new/
+results.zip
+read_res.py
+
 # Jupyter
 .ipynb_checkpoints/
 
 # Environment
 .env
 venv/
+.venv/
