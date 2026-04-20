@@ -9,8 +9,12 @@ build/
 
 # Kaggle output downloads
 results_new/
-results.zip
+latest_results/
+*.zip
 read_res.py
+
+# Sample thesis (reference only)
+Sample Thesis/
 
 # Jupyter
 .ipynb_checkpoints/

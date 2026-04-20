@@ -8,18 +8,20 @@ These are designed for direct inclusion in a thesis/research paper.
 Output: results/thesis_results/figures/*.png
 
 Plots generated:
-  1. hybrid_grid_heatmap.png     -- Grid search heatmap (CAA x LEACE)
-  2. optimal_bias_comparison.png -- Per-prompt before/after for optimal method
-  3. bias_distribution.png       -- Violin/box of bias score distribution
-  4. probability_shift.png       -- Male/female probability shift analysis
-  5. probe_accuracy_layers.png   -- Gender probe accuracy per layer
-  6. performance_summary.png     -- Single-method comprehensive dashboard
-  7. statistical_analysis.png    -- Paired t-test + effect size
-  8. method_selection.png        -- Why hybrid beats individual methods
+  1. hybrid_grid_heatmap.png          -- Grid search heatmap (CAA x LEACE)
+  2. optimal_bias_comparison.png      -- Per-prompt before/after (top 30)
+  3. bias_distribution.png            -- Violin/box of bias score distribution
+  4. probability_shift.png            -- Male/female probability shift analysis
+  5. probe_accuracy_layers.png        -- Gender probe accuracy per layer
+  6. performance_summary.png          -- Single-method comprehensive dashboard
+  7. statistical_analysis.png         -- Paired t-test + effect size
+  8. method_selection.png             -- Why hybrid beats individual methods
+  9. per_prompt_bias_comparison.png   -- ALL 200 prompts before/after + change
 """
 
 import json
 import os
+import re
 import sys
 
 import matplotlib
@@ -142,7 +144,7 @@ def plot_grid_heatmap(grid_data, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "hybrid_grid_heatmap.png"))
     plt.close()
-    print("  [1/8] hybrid_grid_heatmap.png")
+    print("  [1/9] hybrid_grid_heatmap.png")
 
 
 # ─── Plot 2: Per-Prompt Bias Comparison ───────────────────────────────────────
@@ -184,7 +186,7 @@ def plot_optimal_bias_comparison(thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "optimal_bias_comparison.png"))
     plt.close()
-    print("  [2/8] optimal_bias_comparison.png")
+    print("  [2/9] optimal_bias_comparison.png")
 
 
 # ─── Plot 3: Bias Distribution ───────────────────────────────────────────────
@@ -243,7 +245,7 @@ def plot_bias_distribution(thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "bias_distribution.png"))
     plt.close()
-    print("  [3/8] bias_distribution.png")
+    print("  [3/9] bias_distribution.png")
 
 
 # ─── Plot 4: Probability Shift ───────────────────────────────────────────────
@@ -282,7 +284,7 @@ def plot_probability_shift(thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "probability_shift.png"))
     plt.close()
-    print("  [4/8] probability_shift.png")
+    print("  [4/9] probability_shift.png")
 
 
 # ─── Plot 5: Probe Accuracy by Layer ─────────────────────────────────────────
@@ -332,7 +334,7 @@ def plot_probe_accuracy(probe_data, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "probe_accuracy_layers.png"))
     plt.close()
-    print("  [5/8] probe_accuracy_layers.png")
+    print("  [5/9] probe_accuracy_layers.png")
 
 
 # ─── Plot 6: Performance Summary Dashboard ───────────────────────────────────
@@ -418,7 +420,7 @@ def plot_performance_summary(thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "performance_summary.png"))
     plt.close()
-    print("  [6/8] performance_summary.png")
+    print("  [6/9] performance_summary.png")
 
 
 # ─── Plot 7: Statistical Analysis ────────────────────────────────────────────
@@ -507,7 +509,7 @@ def plot_statistical_analysis(thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "statistical_analysis.png"))
     plt.close()
-    print("  [7/8] statistical_analysis.png")
+    print("  [7/9] statistical_analysis.png")
 
 
 # ─── Plot 8: Method Selection Justification ──────────────────────────────────
@@ -572,7 +574,118 @@ def plot_method_selection(v3_data, thesis_results, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "method_selection.png"))
     plt.close()
-    print("  [8/8] method_selection.png")
+    print("  [8/9] method_selection.png")
+
+
+# ─── Plot 9: Full Per-Prompt Bias Comparison ──────────────────────────────────
+
+def _extract_occupation(prompt):
+    """Extract a short occupation label from the prompt."""
+    text = re.sub(r'^The\s+', '', prompt, flags=re.IGNORECASE)
+    words = text.split()
+    verbs = {
+        'finished', 'checked', 'designed', 'organized', 'addressed',
+        'explained', 'announced', 'answered', 'completed', 'arranged',
+        'fixed', 'cleaned', 'argued', 'took', 'wrote', 'examined',
+        'lifted', 'served', 'published', 'read', 'rescued', 'prepared',
+        'repaired', 'styled', 'wired', 'watched', 'built', 'sewed',
+        'drafted', 'delivered', 'drove', 'scored', 'created',
+        'investigated', 'visited', 'patrolled', 'chose', 'approved',
+        'led', 'landed', 'scanned', 'lectured', 'listened', 'joined',
+        'helped', 'analyzed', 'recommended', 'commanded', 'ironed',
+        'managed', 'performed', 'presented', 'operated', 'treated',
+        'counseled', 'painted', 'fed', 'supported', 'monitored',
+        'applied', 'forecasted', 'deployed', 'planned', 'coordinated',
+        'assessed', 'administered', 'compiled', 'calculated', 'mapped',
+        'set', 'drew', 'tested', 'evaluated', 'crafted', 'polished',
+        'measured', 'diagnosed', 'filed', 'provided', 'taught', 'guided',
+        'collected', 'recorded', 'cooked', 'assembled', 'logged',
+        'negotiated', 'greeted', 'certified', 'installed',
+    }
+    occ_words = []
+    for w in words:
+        if w.lower() in verbs:
+            break
+        occ_words.append(w)
+    label = ' '.join(occ_words)
+    if len(label) > 22:
+        label = label[:20] + '..'
+    return label.lower()
+
+
+def plot_per_prompt_full(thesis_results, output_dir):
+    """All 200 prompts: before/after bars + change bars (two-panel)."""
+    prompts = thesis_results["per_prompt"]
+    prompts_sorted = sorted(prompts, key=lambda x: x["reduction"], reverse=True)
+
+    n = len(prompts_sorted)
+    labels = [_extract_occupation(p["clean_prompt"]) for p in prompts_sorted]
+    before = [p["bias_before"] for p in prompts_sorted]
+    after = [p["bias_after"] for p in prompts_sorted]
+    change = [p["reduction"] for p in prompts_sorted]
+
+    y = np.arange(n)
+    bar_h = 0.38
+
+    BEFORE_COLOR = "#F1948A"
+    AFTER_COLOR = "#82E0AA"
+    POS_CHANGE = PALETTE["success"]
+    NEG_CHANGE = PALETTE["danger"]
+    GRID_C = "#E5E8E8"
+
+    fig, (ax1, ax2) = plt.subplots(
+        1, 2, figsize=(18, max(14, n * 0.14)),
+        gridspec_kw={"width_ratios": [3, 1], "wspace": 0.08},
+    )
+
+    # Left panel: Before vs After
+    ax1.barh(y + bar_h / 2, before, bar_h,
+             color=BEFORE_COLOR, edgecolor="white", linewidth=0.3,
+             label="Before", zorder=2)
+    ax1.barh(y - bar_h / 2, after, bar_h,
+             color=AFTER_COLOR, edgecolor="white", linewidth=0.3,
+             label="After", zorder=2)
+    ax1.set_yticks(y)
+    ax1.set_yticklabels(labels, fontsize=5.5)
+    ax1.invert_yaxis()
+    ax1.set_xlabel("L2 Bias Score", fontsize=10, fontweight="bold")
+    ax1.set_title("Per-Prompt Bias: Before vs After Intervention",
+                  fontsize=12, fontweight="bold", pad=12)
+    ax1.legend(loc="lower right", fontsize=9, framealpha=0.9)
+    ax1.set_axisbelow(True)
+    ax1.grid(axis="x", color=GRID_C, linewidth=0.5)
+    ax1.set_xlim(0, max(before) * 1.05)
+
+    # Right panel: Change bars
+    colors = [POS_CHANGE if c > 0 else NEG_CHANGE for c in change]
+    ax2.barh(y, change, 0.6, color=colors, edgecolor="white",
+             linewidth=0.3, zorder=2)
+    ax2.set_yticks([])
+    ax2.invert_yaxis()
+    ax2.set_xlabel("Bias Reduction", fontsize=10, fontweight="bold")
+    ax2.set_title("Change (+ = improved)", fontsize=12, fontweight="bold", pad=12)
+    ax2.axvline(x=0, color=PALETTE["dark"], linewidth=0.8, zorder=3)
+    ax2.set_axisbelow(True)
+    ax2.grid(axis="x", color=GRID_C, linewidth=0.5)
+
+    # Summary stats
+    m = thesis_results["metrics"]
+    stats_text = (
+        f"Method: Hybrid CAA+LEACE | "
+        f"Bias Reduction: {m['bias_reduction_percent']:.1f}% | "
+        f"PPL Increase: {m['perplexity_increase_percent']:.1f}% | "
+        f"Improved: {m['prompts_improved']}/{m['prompts_improved'] + m['prompts_worsened']} "
+        f"({m['prompts_improved_percent']:.1f}%)"
+    )
+    fig.text(0.5, 0.995, stats_text, ha="center", va="top",
+             fontsize=8.5, fontstyle="italic", color="#566573",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#F8F9F9",
+                      edgecolor=GRID_C))
+
+    plt.savefig(os.path.join(output_dir, "per_prompt_bias_comparison.png"),
+                dpi=200, bbox_inches="tight")
+    plt.close()
+    print("  [9/9] per_prompt_bias_comparison.png")
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -598,11 +711,11 @@ def main():
         print("        Run 09_hybrid_optimal.py first.")
         sys.exit(1)
 
-    # Generate all 8 thesis plots
+    # Generate all 9 thesis plots
     if grid_data:
         plot_grid_heatmap(grid_data, fig_dir)
     else:
-        print("  [1/8] SKIP grid heatmap (no grid search data)")
+        print("  [1/9] SKIP grid heatmap (no grid search data)")
 
     plot_optimal_bias_comparison(thesis_results, fig_dir)
     plot_bias_distribution(thesis_results, fig_dir)
@@ -611,7 +724,7 @@ def main():
     if probe_data:
         plot_probe_accuracy(probe_data, fig_dir)
     else:
-        print("  [5/8] SKIP probe accuracy (no probe data)")
+        print("  [5/9] SKIP probe accuracy (no probe data)")
 
     plot_performance_summary(thesis_results, fig_dir)
     plot_statistical_analysis(thesis_results, fig_dir)
@@ -619,10 +732,12 @@ def main():
     if v3_data:
         plot_method_selection(v3_data, thesis_results, fig_dir)
     else:
-        print("  [8/8] SKIP method selection (no v3 data)")
+        print("  [8/9] SKIP method selection (no v3 data)")
+
+    plot_per_prompt_full(thesis_results, fig_dir)
 
     print(f"\n{'='*60}")
-    print(f"  Generated 8 thesis plots in {fig_dir}")
+    print(f"  Generated 9 thesis plots in {fig_dir}")
     print(f"{'='*60}")
 
 
