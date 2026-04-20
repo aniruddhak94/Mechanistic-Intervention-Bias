@@ -1,0 +1,983 @@
+{
+  "features_per_layer": {
+    "layer_6": [
+      {
+        "feature_idx": 10918,
+        "gender_score": 8.447655,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 8.447655,
+        "direction": "female",
+        "layer": 6,
+        "rank": 1
+      },
+      {
+        "feature_idx": 10902,
+        "gender_score": 6.028667,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 6.028667,
+        "direction": "female",
+        "layer": 6,
+        "rank": 2
+      },
+      {
+        "feature_idx": 9439,
+        "gender_score": 5.650667,
+        "male_mean_activation": 9.233066,
+        "female_mean_activation": 3.79216,
+        "direction": "male",
+        "layer": 6,
+        "rank": 3
+      },
+      {
+        "feature_idx": 11059,
+        "gender_score": 5.484512,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 5.484512,
+        "direction": "female",
+        "layer": 6,
+        "rank": 4
+      },
+      {
+        "feature_idx": 19848,
+        "gender_score": 3.874767,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 3.874767,
+        "direction": "female",
+        "layer": 6,
+        "rank": 5
+      },
+      {
+        "feature_idx": 3236,
+        "gender_score": 3.614382,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 3.614382,
+        "direction": "female",
+        "layer": 6,
+        "rank": 6
+      },
+      {
+        "feature_idx": 18694,
+        "gender_score": 2.817856,
+        "male_mean_activation": 0.001691,
+        "female_mean_activation": 2.816575,
+        "direction": "female",
+        "layer": 6,
+        "rank": 7
+      },
+      {
+        "feature_idx": 6369,
+        "gender_score": 2.605391,
+        "male_mean_activation": 3.91396,
+        "female_mean_activation": 1.328193,
+        "direction": "male",
+        "layer": 6,
+        "rank": 8
+      },
+      {
+        "feature_idx": 16315,
+        "gender_score": 2.441207,
+        "male_mean_activation": 0.015793,
+        "female_mean_activation": 2.4556,
+        "direction": "female",
+        "layer": 6,
+        "rank": 9
+      },
+      {
+        "feature_idx": 4873,
+        "gender_score": 2.239557,
+        "male_mean_activation": 4.242556,
+        "female_mean_activation": 2.257513,
+        "direction": "male",
+        "layer": 6,
+        "rank": 10
+      },
+      {
+        "feature_idx": 19548,
+        "gender_score": 2.123492,
+        "male_mean_activation": 2.871325,
+        "female_mean_activation": 2.097355,
+        "direction": "male",
+        "layer": 6,
+        "rank": 11
+      },
+      {
+        "feature_idx": 22460,
+        "gender_score": 2.023328,
+        "male_mean_activation": 2.583603,
+        "female_mean_activation": 0.696005,
+        "direction": "male",
+        "layer": 6,
+        "rank": 12
+      },
+      {
+        "feature_idx": 13031,
+        "gender_score": 1.978944,
+        "male_mean_activation": 0.016935,
+        "female_mean_activation": 1.993175,
+        "direction": "female",
+        "layer": 6,
+        "rank": 13
+      },
+      {
+        "feature_idx": 14954,
+        "gender_score": 1.860606,
+        "male_mean_activation": 0.054291,
+        "female_mean_activation": 1.914897,
+        "direction": "female",
+        "layer": 6,
+        "rank": 14
+      },
+      {
+        "feature_idx": 9229,
+        "gender_score": 1.752725,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 1.752725,
+        "direction": "female",
+        "layer": 6,
+        "rank": 15
+      },
+      {
+        "feature_idx": 11542,
+        "gender_score": 1.73598,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 1.73598,
+        "direction": "female",
+        "layer": 6,
+        "rank": 16
+      },
+      {
+        "feature_idx": 15413,
+        "gender_score": 1.641648,
+        "male_mean_activation": 3.149557,
+        "female_mean_activation": 1.553542,
+        "direction": "male",
+        "layer": 6,
+        "rank": 17
+      },
+      {
+        "feature_idx": 15141,
+        "gender_score": 1.614624,
+        "male_mean_activation": 2.146257,
+        "female_mean_activation": 0.629285,
+        "direction": "male",
+        "layer": 6,
+        "rank": 18
+      },
+      {
+        "feature_idx": 16594,
+        "gender_score": 1.37386,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 1.37386,
+        "direction": "female",
+        "layer": 6,
+        "rank": 19
+      },
+      {
+        "feature_idx": 18502,
+        "gender_score": 1.263052,
+        "male_mean_activation": 1.624779,
+        "female_mean_activation": 0.365904,
+        "direction": "male",
+        "layer": 6,
+        "rank": 20
+      }
+    ],
+    "layer_8": [
+      {
+        "feature_idx": 8808,
+        "gender_score": 10.906956,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 10.906956,
+        "direction": "female",
+        "layer": 8,
+        "rank": 1
+      },
+      {
+        "feature_idx": 9084,
+        "gender_score": 6.326616,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 6.326616,
+        "direction": "female",
+        "layer": 8,
+        "rank": 2
+      },
+      {
+        "feature_idx": 1583,
+        "gender_score": 6.178567,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 6.178567,
+        "direction": "female",
+        "layer": 8,
+        "rank": 3
+      },
+      {
+        "feature_idx": 18106,
+        "gender_score": 4.891845,
+        "male_mean_activation": 6.927011,
+        "female_mean_activation": 2.065984,
+        "direction": "male",
+        "layer": 8,
+        "rank": 4
+      },
+      {
+        "feature_idx": 23548,
+        "gender_score": 3.584218,
+        "male_mean_activation": 4.529303,
+        "female_mean_activation": 1.153849,
+        "direction": "male",
+        "layer": 8,
+        "rank": 5
+      },
+      {
+        "feature_idx": 21921,
+        "gender_score": 3.536862,
+        "male_mean_activation": 4.502939,
+        "female_mean_activation": 2.419731,
+        "direction": "male",
+        "layer": 8,
+        "rank": 6
+      },
+      {
+        "feature_idx": 1199,
+        "gender_score": 3.041238,
+        "male_mean_activation": 0.022922,
+        "female_mean_activation": 3.059795,
+        "direction": "female",
+        "layer": 8,
+        "rank": 7
+      },
+      {
+        "feature_idx": 18642,
+        "gender_score": 2.995448,
+        "male_mean_activation": 3.843281,
+        "female_mean_activation": 1.118313,
+        "direction": "male",
+        "layer": 8,
+        "rank": 8
+      },
+      {
+        "feature_idx": 15229,
+        "gender_score": 2.843286,
+        "male_mean_activation": 3.486872,
+        "female_mean_activation": 2.476148,
+        "direction": "male",
+        "layer": 8,
+        "rank": 9
+      },
+      {
+        "feature_idx": 417,
+        "gender_score": 2.723677,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.723677,
+        "direction": "female",
+        "layer": 8,
+        "rank": 10
+      },
+      {
+        "feature_idx": 1978,
+        "gender_score": 2.625367,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.625367,
+        "direction": "female",
+        "layer": 8,
+        "rank": 11
+      },
+      {
+        "feature_idx": 9706,
+        "gender_score": 2.380057,
+        "male_mean_activation": 3.184343,
+        "female_mean_activation": 0.95242,
+        "direction": "male",
+        "layer": 8,
+        "rank": 12
+      },
+      {
+        "feature_idx": 10922,
+        "gender_score": 2.332452,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.332452,
+        "direction": "female",
+        "layer": 8,
+        "rank": 13
+      },
+      {
+        "feature_idx": 7276,
+        "gender_score": 2.257197,
+        "male_mean_activation": 3.791341,
+        "female_mean_activation": 1.660459,
+        "direction": "male",
+        "layer": 8,
+        "rank": 14
+      },
+      {
+        "feature_idx": 19251,
+        "gender_score": 2.137709,
+        "male_mean_activation": 3.523672,
+        "female_mean_activation": 1.909377,
+        "direction": "male",
+        "layer": 8,
+        "rank": 15
+      },
+      {
+        "feature_idx": 4178,
+        "gender_score": 2.049967,
+        "male_mean_activation": 0.003655,
+        "female_mean_activation": 2.053622,
+        "direction": "female",
+        "layer": 8,
+        "rank": 16
+      },
+      {
+        "feature_idx": 21205,
+        "gender_score": 1.975914,
+        "male_mean_activation": 3.433183,
+        "female_mean_activation": 1.550499,
+        "direction": "male",
+        "layer": 8,
+        "rank": 17
+      },
+      {
+        "feature_idx": 6863,
+        "gender_score": 1.972054,
+        "male_mean_activation": 2.908759,
+        "female_mean_activation": 0.952034,
+        "direction": "male",
+        "layer": 8,
+        "rank": 18
+      },
+      {
+        "feature_idx": 2991,
+        "gender_score": 1.824282,
+        "male_mean_activation": 2.289034,
+        "female_mean_activation": 0.535875,
+        "direction": "male",
+        "layer": 8,
+        "rank": 19
+      },
+      {
+        "feature_idx": 23928,
+        "gender_score": 1.732251,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 1.732251,
+        "direction": "female",
+        "layer": 8,
+        "rank": 20
+      }
+    ],
+    "layer_9": [
+      {
+        "feature_idx": 17143,
+        "gender_score": 15.938769,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 15.938769,
+        "direction": "female",
+        "layer": 9,
+        "rank": 1
+      },
+      {
+        "feature_idx": 14881,
+        "gender_score": 7.39288,
+        "male_mean_activation": 10.293847,
+        "female_mean_activation": 3.345335,
+        "direction": "male",
+        "layer": 9,
+        "rank": 2
+      },
+      {
+        "feature_idx": 8550,
+        "gender_score": 5.358253,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 5.358253,
+        "direction": "female",
+        "layer": 9,
+        "rank": 3
+      },
+      {
+        "feature_idx": 6415,
+        "gender_score": 5.156542,
+        "male_mean_activation": 6.790748,
+        "female_mean_activation": 4.132843,
+        "direction": "male",
+        "layer": 9,
+        "rank": 4
+      },
+      {
+        "feature_idx": 18217,
+        "gender_score": 4.053607,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 4.053607,
+        "direction": "female",
+        "layer": 9,
+        "rank": 5
+      },
+      {
+        "feature_idx": 6640,
+        "gender_score": 3.901356,
+        "male_mean_activation": 0.006381,
+        "female_mean_activation": 3.906656,
+        "direction": "female",
+        "layer": 9,
+        "rank": 6
+      },
+      {
+        "feature_idx": 7400,
+        "gender_score": 3.446515,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 3.446515,
+        "direction": "female",
+        "layer": 9,
+        "rank": 7
+      },
+      {
+        "feature_idx": 5292,
+        "gender_score": 3.196822,
+        "male_mean_activation": 3.699132,
+        "female_mean_activation": 1.216285,
+        "direction": "male",
+        "layer": 9,
+        "rank": 8
+      },
+      {
+        "feature_idx": 24229,
+        "gender_score": 3.187518,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 3.187518,
+        "direction": "female",
+        "layer": 9,
+        "rank": 9
+      },
+      {
+        "feature_idx": 22597,
+        "gender_score": 2.886374,
+        "male_mean_activation": 4.729118,
+        "female_mean_activation": 2.003364,
+        "direction": "male",
+        "layer": 9,
+        "rank": 10
+      },
+      {
+        "feature_idx": 19875,
+        "gender_score": 2.86222,
+        "male_mean_activation": 4.060347,
+        "female_mean_activation": 1.863307,
+        "direction": "male",
+        "layer": 9,
+        "rank": 11
+      },
+      {
+        "feature_idx": 15797,
+        "gender_score": 2.799326,
+        "male_mean_activation": 5.015595,
+        "female_mean_activation": 2.526764,
+        "direction": "male",
+        "layer": 9,
+        "rank": 12
+      },
+      {
+        "feature_idx": 1810,
+        "gender_score": 2.798353,
+        "male_mean_activation": 3.467258,
+        "female_mean_activation": 0.794501,
+        "direction": "male",
+        "layer": 9,
+        "rank": 13
+      },
+      {
+        "feature_idx": 22875,
+        "gender_score": 2.793232,
+        "male_mean_activation": 3.514314,
+        "female_mean_activation": 1.046064,
+        "direction": "male",
+        "layer": 9,
+        "rank": 14
+      },
+      {
+        "feature_idx": 8472,
+        "gender_score": 2.533388,
+        "male_mean_activation": 3.52145,
+        "female_mean_activation": 2.326803,
+        "direction": "male",
+        "layer": 9,
+        "rank": 15
+      },
+      {
+        "feature_idx": 14632,
+        "gender_score": 2.513771,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.513771,
+        "direction": "female",
+        "layer": 9,
+        "rank": 16
+      },
+      {
+        "feature_idx": 17075,
+        "gender_score": 2.356227,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.356227,
+        "direction": "female",
+        "layer": 9,
+        "rank": 17
+      },
+      {
+        "feature_idx": 9461,
+        "gender_score": 2.241182,
+        "male_mean_activation": 2.658476,
+        "female_mean_activation": 0.459613,
+        "direction": "male",
+        "layer": 9,
+        "rank": 18
+      },
+      {
+        "feature_idx": 2251,
+        "gender_score": 2.119288,
+        "male_mean_activation": 2.32514,
+        "female_mean_activation": 0.221857,
+        "direction": "male",
+        "layer": 9,
+        "rank": 19
+      },
+      {
+        "feature_idx": 14740,
+        "gender_score": 2.088,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.088,
+        "direction": "female",
+        "layer": 9,
+        "rank": 20
+      }
+    ],
+    "layer_10": [
+      {
+        "feature_idx": 21978,
+        "gender_score": 14.384914,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 14.384914,
+        "direction": "female",
+        "layer": 10,
+        "rank": 1
+      },
+      {
+        "feature_idx": 23456,
+        "gender_score": 8.55125,
+        "male_mean_activation": 11.853629,
+        "female_mean_activation": 3.589692,
+        "direction": "male",
+        "layer": 10,
+        "rank": 2
+      },
+      {
+        "feature_idx": 373,
+        "gender_score": 6.70365,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 6.70365,
+        "direction": "female",
+        "layer": 10,
+        "rank": 3
+      },
+      {
+        "feature_idx": 4279,
+        "gender_score": 5.61845,
+        "male_mean_activation": 6.754421,
+        "female_mean_activation": 4.426144,
+        "direction": "male",
+        "layer": 10,
+        "rank": 4
+      },
+      {
+        "feature_idx": 20801,
+        "gender_score": 4.923244,
+        "male_mean_activation": 6.955416,
+        "female_mean_activation": 3.955246,
+        "direction": "male",
+        "layer": 10,
+        "rank": 5
+      },
+      {
+        "feature_idx": 23757,
+        "gender_score": 4.624695,
+        "male_mean_activation": 7.136518,
+        "female_mean_activation": 3.199886,
+        "direction": "male",
+        "layer": 10,
+        "rank": 6
+      },
+      {
+        "feature_idx": 24452,
+        "gender_score": 3.971402,
+        "male_mean_activation": 4.550241,
+        "female_mean_activation": 0.836665,
+        "direction": "male",
+        "layer": 10,
+        "rank": 7
+      },
+      {
+        "feature_idx": 16775,
+        "gender_score": 3.713559,
+        "male_mean_activation": 4.629237,
+        "female_mean_activation": 1.029321,
+        "direction": "male",
+        "layer": 10,
+        "rank": 8
+      },
+      {
+        "feature_idx": 3295,
+        "gender_score": 3.630856,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 3.630856,
+        "direction": "female",
+        "layer": 10,
+        "rank": 9
+      },
+      {
+        "feature_idx": 24509,
+        "gender_score": 3.525061,
+        "male_mean_activation": 5.540915,
+        "female_mean_activation": 2.344265,
+        "direction": "male",
+        "layer": 10,
+        "rank": 10
+      },
+      {
+        "feature_idx": 9345,
+        "gender_score": 3.494441,
+        "male_mean_activation": 3.748335,
+        "female_mean_activation": 0.308825,
+        "direction": "male",
+        "layer": 10,
+        "rank": 11
+      },
+      {
+        "feature_idx": 23638,
+        "gender_score": 3.048859,
+        "male_mean_activation": 3.697119,
+        "female_mean_activation": 0.672698,
+        "direction": "male",
+        "layer": 10,
+        "rank": 12
+      },
+      {
+        "feature_idx": 24385,
+        "gender_score": 2.938811,
+        "male_mean_activation": 4.75243,
+        "female_mean_activation": 1.994551,
+        "direction": "male",
+        "layer": 10,
+        "rank": 13
+      },
+      {
+        "feature_idx": 7289,
+        "gender_score": 2.538923,
+        "male_mean_activation": 0.009165,
+        "female_mean_activation": 2.548088,
+        "direction": "female",
+        "layer": 10,
+        "rank": 14
+      },
+      {
+        "feature_idx": 19868,
+        "gender_score": 2.359252,
+        "male_mean_activation": 2.743817,
+        "female_mean_activation": 1.908679,
+        "direction": "male",
+        "layer": 10,
+        "rank": 15
+      },
+      {
+        "feature_idx": 19347,
+        "gender_score": 1.969484,
+        "male_mean_activation": 2.651639,
+        "female_mean_activation": 1.116766,
+        "direction": "male",
+        "layer": 10,
+        "rank": 16
+      },
+      {
+        "feature_idx": 1125,
+        "gender_score": 1.860151,
+        "male_mean_activation": 2.322834,
+        "female_mean_activation": 0.642259,
+        "direction": "male",
+        "layer": 10,
+        "rank": 17
+      },
+      {
+        "feature_idx": 21344,
+        "gender_score": 1.722485,
+        "male_mean_activation": 1.999981,
+        "female_mean_activation": 0.277496,
+        "direction": "male",
+        "layer": 10,
+        "rank": 18
+      },
+      {
+        "feature_idx": 2679,
+        "gender_score": 1.712722,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 1.712722,
+        "direction": "female",
+        "layer": 10,
+        "rank": 19
+      },
+      {
+        "feature_idx": 22090,
+        "gender_score": 1.6855,
+        "male_mean_activation": 1.823137,
+        "female_mean_activation": 0.151672,
+        "direction": "male",
+        "layer": 10,
+        "rank": 20
+      }
+    ],
+    "layer_11": [
+      {
+        "feature_idx": 13715,
+        "gender_score": 18.490023,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 18.490023,
+        "direction": "female",
+        "layer": 11,
+        "rank": 1
+      },
+      {
+        "feature_idx": 3425,
+        "gender_score": 10.032455,
+        "male_mean_activation": 17.34256,
+        "female_mean_activation": 8.197783,
+        "direction": "male",
+        "layer": 11,
+        "rank": 2
+      },
+      {
+        "feature_idx": 12015,
+        "gender_score": 8.278046,
+        "male_mean_activation": 8.526356,
+        "female_mean_activation": 6.255928,
+        "direction": "male",
+        "layer": 11,
+        "rank": 3
+      },
+      {
+        "feature_idx": 3833,
+        "gender_score": 6.717009,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 6.717009,
+        "direction": "female",
+        "layer": 11,
+        "rank": 4
+      },
+      {
+        "feature_idx": 1261,
+        "gender_score": 5.838163,
+        "male_mean_activation": 0.047395,
+        "female_mean_activation": 5.88306,
+        "direction": "female",
+        "layer": 11,
+        "rank": 5
+      },
+      {
+        "feature_idx": 5585,
+        "gender_score": 4.253519,
+        "male_mean_activation": 5.080068,
+        "female_mean_activation": 1.000096,
+        "direction": "male",
+        "layer": 11,
+        "rank": 6
+      },
+      {
+        "feature_idx": 14908,
+        "gender_score": 4.155042,
+        "male_mean_activation": 3.953802,
+        "female_mean_activation": 1.41813,
+        "direction": "male",
+        "layer": 11,
+        "rank": 7
+      },
+      {
+        "feature_idx": 14293,
+        "gender_score": 4.077273,
+        "male_mean_activation": 6.001803,
+        "female_mean_activation": 2.946732,
+        "direction": "male",
+        "layer": 11,
+        "rank": 8
+      },
+      {
+        "feature_idx": 24286,
+        "gender_score": 4.041473,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 4.041473,
+        "direction": "female",
+        "layer": 11,
+        "rank": 9
+      },
+      {
+        "feature_idx": 13740,
+        "gender_score": 3.806839,
+        "male_mean_activation": 6.230175,
+        "female_mean_activation": 2.844637,
+        "direction": "male",
+        "layer": 11,
+        "rank": 10
+      },
+      {
+        "feature_idx": 19373,
+        "gender_score": 3.583577,
+        "male_mean_activation": 6.433518,
+        "female_mean_activation": 3.670832,
+        "direction": "male",
+        "layer": 11,
+        "rank": 11
+      },
+      {
+        "feature_idx": 8062,
+        "gender_score": 3.397618,
+        "male_mean_activation": 3.680665,
+        "female_mean_activation": 0.409534,
+        "direction": "male",
+        "layer": 11,
+        "rank": 12
+      },
+      {
+        "feature_idx": 21201,
+        "gender_score": 3.109877,
+        "male_mean_activation": 4.309659,
+        "female_mean_activation": 2.427211,
+        "direction": "male",
+        "layer": 11,
+        "rank": 13
+      },
+      {
+        "feature_idx": 19818,
+        "gender_score": 2.85872,
+        "male_mean_activation": 3.503385,
+        "female_mean_activation": 0.673162,
+        "direction": "male",
+        "layer": 11,
+        "rank": 14
+      },
+      {
+        "feature_idx": 22412,
+        "gender_score": 2.659879,
+        "male_mean_activation": 0.000797,
+        "female_mean_activation": 2.660676,
+        "direction": "female",
+        "layer": 11,
+        "rank": 15
+      },
+      {
+        "feature_idx": 24400,
+        "gender_score": 2.513759,
+        "male_mean_activation": 0.419024,
+        "female_mean_activation": 2.892354,
+        "direction": "female",
+        "layer": 11,
+        "rank": 16
+      },
+      {
+        "feature_idx": 7055,
+        "gender_score": 2.397682,
+        "male_mean_activation": 3.663456,
+        "female_mean_activation": 1.810144,
+        "direction": "male",
+        "layer": 11,
+        "rank": 17
+      },
+      {
+        "feature_idx": 11072,
+        "gender_score": 2.306995,
+        "male_mean_activation": 2.376821,
+        "female_mean_activation": 4.460394,
+        "direction": "female",
+        "layer": 11,
+        "rank": 18
+      },
+      {
+        "feature_idx": 1502,
+        "gender_score": 2.224277,
+        "male_mean_activation": 2.220254,
+        "female_mean_activation": 0.731318,
+        "direction": "male",
+        "layer": 11,
+        "rank": 19
+      },
+      {
+        "feature_idx": 1125,
+        "gender_score": 2.1435,
+        "male_mean_activation": 0.0,
+        "female_mean_activation": 2.1435,
+        "direction": "female",
+        "layer": 11,
+        "rank": 20
+      }
+    ]
+  },
+  "layer_summaries": [
+    {
+      "layer": 6,
+      "top_feature_score": 8.447655,
+      "mean_top10_score": 4.320466,
+      "n_features_found": 20,
+      "male_biased_features": 8,
+      "female_biased_features": 12,
+      "d_sae": 24576
+    },
+    {
+      "layer": 8,
+      "top_feature_score": 10.906956,
+      "mean_top10_score": 4.702871,
+      "n_features_found": 20,
+      "male_biased_features": 11,
+      "female_biased_features": 9,
+      "d_sae": 24576
+    },
+    {
+      "layer": 9,
+      "top_feature_score": 15.938769,
+      "mean_top10_score": 5.451864,
+      "n_features_found": 20,
+      "male_biased_features": 11,
+      "female_biased_features": 9,
+      "d_sae": 24576
+    },
+    {
+      "layer": 10,
+      "top_feature_score": 14.384914,
+      "mean_top10_score": 5.964708,
+      "n_features_found": 20,
+      "male_biased_features": 15,
+      "female_biased_features": 5,
+      "d_sae": 24576
+    },
+    {
+      "layer": 11,
+      "top_feature_score": 18.490023,
+      "mean_top10_score": 6.968984,
+      "n_features_found": 20,
+      "male_biased_features": 12,
+      "female_biased_features": 8,
+      "d_sae": 24576
+    }
+  ],
+  "config": {
+    "layers_analyzed": [
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "top_k_per_layer": 20,
+    "n_prompt_pairs": 200
+  },
+  "statistics": {
+    "total_gender_features_found": 100,
+    "total_sae_features_across_layers": 122880,
+    "gender_feature_ratio": 0.0814,
+    "mean_gender_score": 3.883759,
+    "std_gender_score": 2.893284,
+    "max_gender_score": 18.490023,
+    "min_gender_score": 1.263052,
+    "male_biased_count": 57,
+    "female_biased_count": 43
+  }
+}
